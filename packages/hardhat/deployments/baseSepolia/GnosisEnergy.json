@@ -1,0 +1,324 @@
+{
+  "address": "0x6510a0cd8d89428f62753ABB2d19d00678c70FA4",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_initialEnergyPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_addr",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "EnergyPurchased",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "currAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "PriceUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawal",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "energyPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserPaymentHistory",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct GnosisEnergy.Payment[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "makePayment",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalEnergyCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateEnergyPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawFunds",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xa2999e4a5da9d95b908ccb40b78fc1bc838bcd73c25ed16601448c9ec0a128f1",
+  "receipt": {
+    "to": null,
+    "from": "0x2fae2a3aC4e8770b8641659f0669cFe8bfd60eA3",
+    "contractAddress": "0x6510a0cd8d89428f62753ABB2d19d00678c70FA4",
+    "transactionIndex": 5,
+    "gasUsed": "457575",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xadb6b09c2ec6e888b27ee999b809629c2c0b77a57f0ab1a48c5a660d46e8df46",
+    "transactionHash": "0xa2999e4a5da9d95b908ccb40b78fc1bc838bcd73c25ed16601448c9ec0a128f1",
+    "logs": [],
+    "blockNumber": 11998125,
+    "cumulativeGasUsed": "653004",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "5000000000000000",
+    "0x2fae2a3aC4e8770b8641659f0669cFe8bfd60eA3"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "0d1b6dc8becc0165df2668c4c2022937",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_initialEnergyPrice\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EnergyPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"currAmount\",\"type\":\"uint256\"}],\"name\":\"PriceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"withdrawal\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"energyPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getUserPaymentHistory\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct GnosisEnergy.Payment[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"makePayment\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalEnergyCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_newPrice\",\"type\":\"uint256\"}],\"name\":\"updateEnergyPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"recipient\",\"type\":\"address\"}],\"name\":\"withdrawFunds\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Electricity.sol\":\"GnosisEnergy\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Electricity.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.0 <0.9.0;\\n\\ncontract GnosisEnergy {\\n\\tstruct Payment {\\n\\t\\tuint256 id;\\n\\t\\tuint256 amount;\\n\\t\\tuint256 value;\\n\\t\\tuint256 timestamp;\\n\\t}\\n\\tuint256 public energyPrice; // price in xDai per 1kw of energy\\n\\taddress public owner; // address of contract deployer alias distro company\\n\\tuint256 public totalEnergyCount; // total amount of payments made by all users\\n\\t//store the history of payments made by a user\\n\\tmapping(address => Payment[]) internal userPayment;\\n\\n\\tevent EnergyPurchased(address indexed user, uint256 amount);\\n\\tevent PriceUpdated(uint256 currAmount);\\n\\tevent withdrawal(uint256 amount, address indexed owner);\\n\\n\\tconstructor(uint256 _initialEnergyPrice, address _addr) {\\n\\t\\towner = _addr;\\n\\t\\t// _initialEnergyPrice =_initialEnergyPrice * (10**18);\\n\\t\\tenergyPrice = _initialEnergyPrice;\\n\\t}\\n\\n\\tmodifier onlyOwner() {\\n\\t\\trequire(msg.sender == owner, \\\"Unauthorized\\\");\\n\\t\\t_;\\n\\t}\\n\\n\\t// function to allow smart contract recieve funds\\n\\treceive() external payable {}\\n\\n\\t// function to update the unit price  of energy\\n\\tfunction updateEnergyPrice(uint256 _newPrice) external onlyOwner {\\n\\t\\t// _newPrice = _newPrice * (10**18);\\n\\t\\tenergyPrice = _newPrice;\\n\\t\\temit PriceUpdated(energyPrice);\\n\\t}\\n\\n\\tfunction makePayment() external payable {\\n\\t\\tif (msg.value < energyPrice) {\\n\\t\\t\\trevert(\\\"low funds\\\");\\n\\t\\t}\\n\\t\\t_recordPayment(msg.sender, msg.value);\\n\\t}\\n\\t//function to get a user history of payments\\n\\tfunction getUserPaymentHistory(\\n\\t\\taddress _user\\n\\t) external view returns (Payment[] memory) {\\n\\t\\treturn userPayment[_user];\\n\\t}\\n\\t// Function to record a payment\\n\\tfunction _recordPayment(address payer, uint256 amount) private {\\n\\t\\tif (amount < 0 || msg.sender.balance < amount) {\\n\\t\\t\\trevert(\\\"record failed\\\");\\n\\t\\t}\\n\\t\\ttotalEnergyCount += 1;\\n\\t\\tuint256 value = amount * energyPrice;\\n\\t\\tuserPayment[payer].push(\\n\\t\\t\\tPayment(totalEnergyCount, amount, value, block.timestamp)\\n\\t\\t);\\n\\t\\temit EnergyPurchased(msg.sender, msg.value);\\n\\t}\\n\\n\\t// Function to transfer the contract's balance to a specified address\\n\\tfunction withdrawFunds(address payable recipient) public payable onlyOwner {\\n\\t\\tuint256 contractBalance = address(this).balance;\\n\\t\\trequire(contractBalance > 0, \\\"zero balance\\\");\\n\\t\\t(bool sent, ) = recipient.call{ value: contractBalance }(\\\"\\\");\\n\\t\\trequire(sent, \\\"Failed to send funds\\\");\\n\\t\\temit withdrawal(contractBalance, recipient);\\n\\t}\\n}\\n\",\"keccak256\":\"0xccca1d432dfe31ced6d8856b04b1d0519b14c89bb115f64d63bd168a747d030e\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161071938038061071983398101604081905261002f91610057565b600180546001600160a01b0319166001600160a01b0392909216919091179055600055610094565b6000806040838503121561006a57600080fd5b825160208401519092506001600160a01b038116811461008957600080fd5b809150509250929050565b610676806100a36000396000f3fe6080604052600436106100745760003560e01c80638da5cb5b1161004e5780638da5cb5b146100eb578063d8d7970014610123578063dd1133091461012b578063df7460d91461014157600080fd5b80631045e3421461008057806328db4726146100a957806368742da6146100d657600080fd5b3661007b57005b600080fd5b34801561008c57600080fd5b5061009660005481565b6040519081526020015b60405180910390f35b3480156100b557600080fd5b506100c96100c4366004610559565b610161565b6040516100a0919061057d565b6100e96100e4366004610559565b6101fe565b005b3480156100f757600080fd5b5060015461010b906001600160a01b031681565b6040516001600160a01b0390911681526020016100a0565b6100e961036b565b34801561013757600080fd5b5061009660025481565b34801561014d57600080fd5b506100e961015c3660046105e1565b6103b5565b6001600160a01b0381166000908152600360209081526040808320805482518185028101850190935280835260609492939192909184015b828210156101f3578382906000526020600020906004020160405180608001604052908160008201548152602001600182015481526020016002820154815260200160038201548152505081526020019060010190610199565b505050509050919050565b6001546001600160a01b0316331461024c5760405162461bcd60e51b815260206004820152600c60248201526b155b985d5d1a1bdc9a5e995960a21b60448201526064015b60405180910390fd5b47806102895760405162461bcd60e51b815260206004820152600c60248201526b7a65726f2062616c616e636560a01b6044820152606401610243565b6000826001600160a01b03168260405160006040518083038185875af1925050503d80600081146102d6576040519150601f19603f3d011682016040523d82523d6000602084013e6102db565b606091505b50509050806103235760405162461bcd60e51b81526020600482015260146024820152734661696c656420746f2073656e642066756e647360601b6044820152606401610243565b826001600160a01b03167f190d7c555f6ea3d9f358fe9f431c2c57019f9635fa98c775bbceba51fd933c348360405161035e91815260200190565b60405180910390a2505050565b6000543410156103a95760405162461bcd60e51b81526020600482015260096024820152686c6f772066756e647360b81b6044820152606401610243565b6103b33334610439565b565b6001546001600160a01b031633146103fe5760405162461bcd60e51b815260206004820152600c60248201526b155b985d5d1a1bdc9a5e995960a21b6044820152606401610243565b60008190556040518181527f66cbca4f3c64fecf1dcb9ce094abcf7f68c3450a1d4e3a8e917dd621edb4ebe09060200160405180910390a150565b333181111561047a5760405162461bcd60e51b815260206004820152600d60248201526c1c9958dbdc990819985a5b1959609a1b6044820152606401610243565b60016002600082825461048d9190610610565b9091555050600080546104a09083610629565b6001600160a01b038416600090815260036020818152604080842081516080810183526002805482528185018a81528285018981524260608501908152855460018181018855968b5297909920935160049097029093019586555192850192909255519083015592519101555190915033907f4832f573ecca0a74a30b01941ee5d9ab5e612c3869299f1b635f58b4cc98a5149061035e9034815260200190565b6001600160a01b038116811461055657600080fd5b50565b60006020828403121561056b57600080fd5b813561057681610541565b9392505050565b602080825282518282018190526000919060409081850190868401855b828110156105d45781518051855286810151878601528581015186860152606090810151908501526080909301929085019060010161059a565b5091979650505050505050565b6000602082840312156105f357600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b80820180821115610623576106236105fa565b92915050565b8082028115828204841417610623576106236105fa56fea26469706673582212209f885c49c27639f0be0961c9b13e54dc0c25fe077b6ce03bb9ef1d1c7a74655164736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600436106100745760003560e01c80638da5cb5b1161004e5780638da5cb5b146100eb578063d8d7970014610123578063dd1133091461012b578063df7460d91461014157600080fd5b80631045e3421461008057806328db4726146100a957806368742da6146100d657600080fd5b3661007b57005b600080fd5b34801561008c57600080fd5b5061009660005481565b6040519081526020015b60405180910390f35b3480156100b557600080fd5b506100c96100c4366004610559565b610161565b6040516100a0919061057d565b6100e96100e4366004610559565b6101fe565b005b3480156100f757600080fd5b5060015461010b906001600160a01b031681565b6040516001600160a01b0390911681526020016100a0565b6100e961036b565b34801561013757600080fd5b5061009660025481565b34801561014d57600080fd5b506100e961015c3660046105e1565b6103b5565b6001600160a01b0381166000908152600360209081526040808320805482518185028101850190935280835260609492939192909184015b828210156101f3578382906000526020600020906004020160405180608001604052908160008201548152602001600182015481526020016002820154815260200160038201548152505081526020019060010190610199565b505050509050919050565b6001546001600160a01b0316331461024c5760405162461bcd60e51b815260206004820152600c60248201526b155b985d5d1a1bdc9a5e995960a21b60448201526064015b60405180910390fd5b47806102895760405162461bcd60e51b815260206004820152600c60248201526b7a65726f2062616c616e636560a01b6044820152606401610243565b6000826001600160a01b03168260405160006040518083038185875af1925050503d80600081146102d6576040519150601f19603f3d011682016040523d82523d6000602084013e6102db565b606091505b50509050806103235760405162461bcd60e51b81526020600482015260146024820152734661696c656420746f2073656e642066756e647360601b6044820152606401610243565b826001600160a01b03167f190d7c555f6ea3d9f358fe9f431c2c57019f9635fa98c775bbceba51fd933c348360405161035e91815260200190565b60405180910390a2505050565b6000543410156103a95760405162461bcd60e51b81526020600482015260096024820152686c6f772066756e647360b81b6044820152606401610243565b6103b33334610439565b565b6001546001600160a01b031633146103fe5760405162461bcd60e51b815260206004820152600c60248201526b155b985d5d1a1bdc9a5e995960a21b6044820152606401610243565b60008190556040518181527f66cbca4f3c64fecf1dcb9ce094abcf7f68c3450a1d4e3a8e917dd621edb4ebe09060200160405180910390a150565b333181111561047a5760405162461bcd60e51b815260206004820152600d60248201526c1c9958dbdc990819985a5b1959609a1b6044820152606401610243565b60016002600082825461048d9190610610565b9091555050600080546104a09083610629565b6001600160a01b038416600090815260036020818152604080842081516080810183526002805482528185018a81528285018981524260608501908152855460018181018855968b5297909920935160049097029093019586555192850192909255519083015592519101555190915033907f4832f573ecca0a74a30b01941ee5d9ab5e612c3869299f1b635f58b4cc98a5149061035e9034815260200190565b6001600160a01b038116811461055657600080fd5b50565b60006020828403121561056b57600080fd5b813561057681610541565b9392505050565b602080825282518282018190526000919060409081850190868401855b828110156105d45781518051855286810151878601528581015186860152606090810151908501526080909301929085019060010161059a565b5091979650505050505050565b6000602082840312156105f357600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b80820180821115610623576106236105fa565b92915050565b8082028115828204841417610623576106236105fa56fea26469706673582212209f885c49c27639f0be0961c9b13e54dc0c25fe077b6ce03bb9ef1d1c7a74655164736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 12,
+        "contract": "contracts/Electricity.sol:GnosisEnergy",
+        "label": "energyPrice",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 14,
+        "contract": "contracts/Electricity.sol:GnosisEnergy",
+        "label": "owner",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 16,
+        "contract": "contracts/Electricity.sol:GnosisEnergy",
+        "label": "totalEnergyCount",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 22,
+        "contract": "contracts/Electricity.sol:GnosisEnergy",
+        "label": "userPayment",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_array(t_struct(Payment)10_storage)dyn_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_struct(Payment)10_storage)dyn_storage": {
+        "base": "t_struct(Payment)10_storage",
+        "encoding": "dynamic_array",
+        "label": "struct GnosisEnergy.Payment[]",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_array(t_struct(Payment)10_storage)dyn_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct GnosisEnergy.Payment[])",
+        "numberOfBytes": "32",
+        "value": "t_array(t_struct(Payment)10_storage)dyn_storage"
+      },
+      "t_struct(Payment)10_storage": {
+        "encoding": "inplace",
+        "label": "struct GnosisEnergy.Payment",
+        "members": [
+          {
+            "astId": 3,
+            "contract": "contracts/Electricity.sol:GnosisEnergy",
+            "label": "id",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 5,
+            "contract": "contracts/Electricity.sol:GnosisEnergy",
+            "label": "amount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 7,
+            "contract": "contracts/Electricity.sol:GnosisEnergy",
+            "label": "value",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 9,
+            "contract": "contracts/Electricity.sol:GnosisEnergy",
+            "label": "timestamp",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Electricity.sol": {
+      "content": "//SPDX-License-Identifier: MIT\npragma solidity >=0.8.0 <0.9.0;\n\ncontract GnosisEnergy {\n\tstruct Payment {\n\t\tuint256 id;\n\t\tuint256 amount;\n\t\tuint256 value;\n\t\tuint256 timestamp;\n\t}\n\tuint256 public energyPrice; // price in xDai per 1kw of energy\n\taddress public owner; // address of contract deployer alias distro company\n\tuint256 public totalEnergyCount; // total amount of payments made by all users\n\t//store the history of payments made by a user\n\tmapping(address => Payment[]) internal userPayment;\n\n\tevent EnergyPurchased(address indexed user, uint256 amount);\n\tevent PriceUpdated(uint256 currAmount);\n\tevent withdrawal(uint256 amount, address indexed owner);\n\n\tconstructor(uint256 _initialEnergyPrice, address _addr) {\n\t\towner = _addr;\n\t\t// _initialEnergyPrice =_initialEnergyPrice * (10**18);\n\t\tenergyPrice = _initialEnergyPrice;\n\t}\n\n\tmodifier onlyOwner() {\n\t\trequire(msg.sender == owner, \"Unauthorized\");\n\t\t_;\n\t}\n\n\t// function to allow smart contract recieve funds\n\treceive() external payable {}\n\n\t// function to update the unit price  of energy\n\tfunction updateEnergyPrice(uint256 _newPrice) external onlyOwner {\n\t\t// _newPrice = _newPrice * (10**18);\n\t\tenergyPrice = _newPrice;\n\t\temit PriceUpdated(energyPrice);\n\t}\n\n\tfunction makePayment() external payable {\n\t\tif (msg.value < energyPrice) {\n\t\t\trevert(\"low funds\");\n\t\t}\n\t\t_recordPayment(msg.sender, msg.value);\n\t}\n\t//function to get a user history of payments\n\tfunction getUserPaymentHistory(\n\t\taddress _user\n\t) external view returns (Payment[] memory) {\n\t\treturn userPayment[_user];\n\t}\n\t// Function to record a payment\n\tfunction _recordPayment(address payer, uint256 amount) private {\n\t\tif (amount < 0 || msg.sender.balance < amount) {\n\t\t\trevert(\"record failed\");\n\t\t}\n\t\ttotalEnergyCount += 1;\n\t\tuint256 value = amount * energyPrice;\n\t\tuserPayment[payer].push(\n\t\t\tPayment(totalEnergyCount, amount, value, block.timestamp)\n\t\t);\n\t\temit EnergyPurchased(msg.sender, msg.value);\n\t}\n\n\t// Function to transfer the contract's balance to a specified address\n\tfunction withdrawFunds(address payable recipient) public payable onlyOwner {\n\t\tuint256 contractBalance = address(this).balance;\n\t\trequire(contractBalance > 0, \"zero balance\");\n\t\t(bool sent, ) = recipient.call{ value: contractBalance }(\"\");\n\t\trequire(sent, \"Failed to send funds\");\n\t\temit withdrawal(contractBalance, recipient);\n\t}\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
